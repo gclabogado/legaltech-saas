@@ -88,6 +88,140 @@
             gap: 18px;
             align-items: stretch;
         }
+        .landing-open-source {
+            display: grid;
+            gap: 18px;
+            padding: 28px;
+            border-radius: 32px;
+            border: 1px solid rgba(10,102,194,.12);
+            background:
+                radial-gradient(320px 180px at 0% 0%, rgba(255,255,255,.14), transparent 72%),
+                radial-gradient(340px 180px at 100% 100%, rgba(255,255,255,.08), transparent 74%),
+                linear-gradient(145deg, #091625 0%, #0d2947 48%, #0a66c2 100%);
+            color: #f8fbff;
+            box-shadow: 0 30px 60px rgba(15,23,42,.16);
+            text-align: center;
+            justify-items: center;
+        }
+        .landing-open-source-head {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .landing-open-source-kicker {
+            display: inline-flex;
+            align-items: center;
+            min-height: 34px;
+            padding: 0 14px;
+            border-radius: 999px;
+            background: rgba(255,255,255,.10);
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,.16);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        .landing-open-source h2 {
+            margin: 0;
+            max-width: 860px;
+            font-size: 44px;
+            line-height: .98;
+            letter-spacing: -.05em;
+        }
+        .landing-open-source p {
+            margin: 0;
+            font-size: 17px;
+            line-height: 1.6;
+            color: rgba(239,246,255,.84);
+            max-width: 820px;
+        }
+        .landing-open-source-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .landing-open-source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 52px;
+            padding: 0 18px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,.18);
+            background: rgba(255,255,255,.08);
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 800;
+        }
+        .landing-open-source-link.primary {
+            background: #ffffff;
+            color: #0f172a;
+            box-shadow: 0 14px 24px rgba(15,23,42,.18);
+            border-color: transparent;
+        }
+        .landing-open-source-meta {
+            font-size: 12px;
+            color: rgba(239,246,255,.74);
+            font-weight: 700;
+        }
+        .landing-open-source-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .landing-open-source-badge {
+            display: inline-flex;
+            align-items: center;
+            min-height: 34px;
+            padding: 0 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,.16);
+            background: rgba(255,255,255,.08);
+            color: rgba(239,246,255,.94);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .01em;
+        }
+        .landing-open-source-stats {
+            display: grid;
+            gap: 12px;
+            width: 100%;
+            max-width: 860px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .landing-open-source-stat {
+            display: grid;
+            gap: 6px;
+            padding: 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,.12);
+            background: rgba(255,255,255,.07);
+            text-align: left;
+        }
+        .landing-open-source-stat span {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: rgba(239,246,255,.64);
+            font-weight: 800;
+        }
+        .landing-open-source-stat strong {
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: -.04em;
+        }
+        .landing-open-source-stat small {
+            font-size: 13px;
+            line-height: 1.5;
+            color: rgba(239,246,255,.78);
+        }
         .landing-decision-grid {
             display: grid;
             gap: 14px;
@@ -506,6 +640,20 @@
                 padding: 18px;
                 border-radius: 22px;
             }
+            .landing-open-source {
+                padding: 18px;
+                border-radius: 22px;
+            }
+            .landing-open-source h2 {
+                font-size: 30px;
+                line-height: 1.02;
+            }
+            .landing-open-source p {
+                font-size: 15px;
+            }
+            .landing-open-source-stats {
+                grid-template-columns: 1fr;
+            }
             .landing-hero-main h1 {
                 font-size: 34px;
                 line-height: .96;
@@ -556,6 +704,41 @@
                 <?php endif; ?>
             </div>
         </header>
+
+        <section class="landing-open-source">
+            <div class="landing-open-source-head">
+                <span class="landing-open-source-kicker">Open Source</span>
+                <span class="landing-open-source-meta">Disponible ahora en GitHub</span>
+            </div>
+            <div class="landing-open-source-badges">
+                <span class="landing-open-source-badge">MIT License</span>
+                <span class="landing-open-source-badge">Preview Live</span>
+                <span class="landing-open-source-badge">Fork-ready</span>
+            </div>
+            <h2>Legaltech SaaS, ahora publico y listo para explorar, forkear y mejorar.</h2>
+            <p>La version open source del proyecto ya esta online. Revisa la arquitectura PHP + Slim, usa la base como referencia y sigue la evolucion del producto desde el repositorio publico.</p>
+            <div class="landing-open-source-actions">
+                <a class="landing-open-source-link primary" href="https://github.com/gclabogado/legaltech-saas" target="_blank" rel="noreferrer">Ir al repositorio en GitHub</a>
+                <a class="landing-open-source-link" href="https://github.com/gclabogado/legaltech-saas" target="_blank" rel="noreferrer">Leer codigo y documentacion</a>
+            </div>
+            <div class="landing-open-source-stats">
+                <article class="landing-open-source-stat">
+                    <span>Stack</span>
+                    <strong>PHP + Slim</strong>
+                    <small>Server-rendered, simple de entender y facil de desplegar.</small>
+                </article>
+                <article class="landing-open-source-stat">
+                    <span>Repositorio</span>
+                    <strong>Publico</strong>
+                    <small>Codigo, documentacion y flujo de deploy visibles en GitHub.</small>
+                </article>
+                <article class="landing-open-source-stat">
+                    <span>Uso ideal</span>
+                    <strong>Fork + Build</strong>
+                    <small>Base legaltech lista para estudiar, adaptar y extender.</small>
+                </article>
+            </div>
+        </section>
 
         <section class="landing-hero">
             <div class="landing-hero-main">
