@@ -90,11 +90,12 @@
         }
         .landing-open-source {
             display: grid;
-            gap: 18px;
-            padding: 28px;
+            gap: 22px;
+            padding: 34px;
             border-radius: 32px;
             border: 1px solid rgba(10,102,194,.12);
             background:
+                radial-gradient(220px 220px at 14% 18%, rgba(255,255,255,.10), transparent 74%),
                 radial-gradient(320px 180px at 0% 0%, rgba(255,255,255,.14), transparent 72%),
                 radial-gradient(340px 180px at 100% 100%, rgba(255,255,255,.08), transparent 74%),
                 linear-gradient(145deg, #091625 0%, #0d2947 48%, #0a66c2 100%);
@@ -102,6 +103,7 @@
             box-shadow: 0 30px 60px rgba(15,23,42,.16);
             text-align: center;
             justify-items: center;
+            overflow: hidden;
         }
         .landing-open-source-head {
             display: flex;
@@ -126,17 +128,42 @@
         }
         .landing-open-source h2 {
             margin: 0;
-            max-width: 860px;
-            font-size: 44px;
-            line-height: .98;
+            max-width: 980px;
+            font-size: 52px;
+            line-height: .94;
             letter-spacing: -.05em;
         }
         .landing-open-source p {
             margin: 0;
-            font-size: 17px;
+            font-size: 18px;
             line-height: 1.6;
             color: rgba(239,246,255,.84);
-            max-width: 820px;
+            max-width: 760px;
+        }
+        .landing-open-source-lead {
+            display: grid;
+            gap: 14px;
+            max-width: 980px;
+        }
+        .landing-open-source-proof {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .landing-open-source-proof span {
+            display: inline-flex;
+            align-items: center;
+            min-height: 36px;
+            padding: 0 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,.12);
+            background: rgba(255,255,255,.08);
+            color: rgba(239,246,255,.94);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .03em;
         }
         .landing-open-source-actions {
             display: flex;
@@ -641,15 +668,15 @@
                 border-radius: 22px;
             }
             .landing-open-source {
-                padding: 18px;
+                padding: 24px 18px;
                 border-radius: 22px;
             }
             .landing-open-source h2 {
-                font-size: 30px;
+                font-size: 34px;
                 line-height: 1.02;
             }
             .landing-open-source p {
-                font-size: 15px;
+                font-size: 16px;
             }
             .landing-open-source-stats {
                 grid-template-columns: 1fr;
@@ -708,34 +735,41 @@
         <section class="landing-open-source">
             <div class="landing-open-source-head">
                 <span class="landing-open-source-kicker">Open Source</span>
-                <span class="landing-open-source-meta">Disponible ahora en GitHub</span>
+                <span class="landing-open-source-meta">Release publico en GitHub</span>
             </div>
             <div class="landing-open-source-badges">
                 <span class="landing-open-source-badge">MIT License</span>
                 <span class="landing-open-source-badge">Preview Live</span>
                 <span class="landing-open-source-badge">Fork-ready</span>
             </div>
-            <h2>Legaltech SaaS, ahora publico y listo para explorar, forkear y mejorar.</h2>
-            <p>La version open source del proyecto ya esta online. Revisa la arquitectura PHP + Slim, usa la base como referencia y sigue la evolucion del producto desde el repositorio publico.</p>
+            <div class="landing-open-source-lead">
+                <h2>Construye sobre una base legaltech real, abierta y lista para evolucionar.</h2>
+                <p>El proyecto ya vive como codigo abierto. Explora una base SaaS legal hecha en PHP + Slim, estudia el flujo de producto y parte con un repositorio que ya corre, ya tiene preview y ya puede extenderse.</p>
+            </div>
+            <div class="landing-open-source-proof">
+                <span>Codigo real, no template vacio</span>
+                <span>Deploy documentado</span>
+                <span>Listo para forkear</span>
+            </div>
             <div class="landing-open-source-actions">
-                <a class="landing-open-source-link primary" href="https://github.com/gclabogado/legaltech-saas" target="_blank" rel="noreferrer">Ir al repositorio en GitHub</a>
-                <a class="landing-open-source-link" href="https://github.com/gclabogado/legaltech-saas" target="_blank" rel="noreferrer">Leer codigo y documentacion</a>
+                <a class="landing-open-source-link primary" href="https://github.com/gclabogado/legaltech-saas" target="_blank" rel="noreferrer">Ver repositorio en GitHub</a>
+                <a class="landing-open-source-link" href="https://github.com/gclabogado/legaltech-saas" target="_blank" rel="noreferrer">Explorar codigo y docs</a>
             </div>
             <div class="landing-open-source-stats">
                 <article class="landing-open-source-stat">
                     <span>Stack</span>
                     <strong>PHP + Slim</strong>
-                    <small>Server-rendered, simple de entender y facil de desplegar.</small>
+                    <small>Arquitectura server-rendered, directa de leer y facil de desplegar.</small>
                 </article>
                 <article class="landing-open-source-stat">
-                    <span>Repositorio</span>
-                    <strong>Publico</strong>
-                    <small>Codigo, documentacion y flujo de deploy visibles en GitHub.</small>
+                    <span>Release</span>
+                    <strong>Open</strong>
+                    <small>Codigo, documentacion y flujo de despliegue visibles desde GitHub.</small>
                 </article>
                 <article class="landing-open-source-stat">
                     <span>Uso ideal</span>
-                    <strong>Fork + Build</strong>
-                    <small>Base legaltech lista para estudiar, adaptar y extender.</small>
+                    <strong>Fork + Ship</strong>
+                    <small>Base lista para estudiar, adaptar y convertir en tu propio producto.</small>
                 </article>
             </div>
         </section>
