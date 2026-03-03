@@ -12,7 +12,7 @@ El codigo publicable vive en este repositorio. La produccion actual corre en:
 1. Editar y versionar cambios en este repositorio.
 2. Probar localmente o en un entorno controlado.
 3. Ejecutar `bin/deploy-to-prod.sh` en modo simulacion.
-4. Ejecutar `bin/deploy-to-prod.sh --apply` para desplegar a produccion.
+4. Ejecutar `bin/deploy-to-prod.sh --apply` para desplegar a produccion sin borrar archivos del destino.
 5. Validar Apache y endpoints criticos.
 
 ## Script de Deploy
@@ -29,16 +29,40 @@ Aplicar cambios:
 bin/deploy-to-prod.sh --apply
 ```
 
+Aplicar con espejo estricto y borrado de archivos sobrantes en destino:
+
+```bash
+bin/deploy-to-prod.sh --apply-delete
+```
+
 Por defecto sincroniza:
 
 - desde `/root/lawyers-open-source`
 - hacia `/var/www/lawyers`
+
+Por seguridad, el deploy normal excluye documentacion del repo open-source y no borra archivos existentes del destino.
 
 Puedes sobrescribir rutas:
 
 ```bash
 SOURCE_DIR=/ruta/repo TARGET_DIR=/ruta/app bin/deploy-to-prod.sh --apply
 ```
+
+## Script de Respaldo Desde Produccion
+
+Tambien puedes sacar una copia privada del arbol de produccion:
+
+```bash
+bin/backup-prod-to-private.sh
+bin/backup-prod-to-private.sh --apply
+```
+
+Por defecto respalda:
+
+- desde `/var/www/lawyers`
+- hacia `/root/lawyers-prod-backups/<timestamp>`
+
+El respaldo excluye `vendor/`, backups historicos, zips, txt operativos y otros artefactos de ruido para dejar una copia privada mas limpia.
 
 ## Lo Que No Se Despliega Desde El Repo
 
