@@ -65,6 +65,19 @@ Si usas Apache:
 - habilita `mod_rewrite`
 - conserva el archivo `public/.htaccess`
 
+## Deploy
+
+Este repositorio incluye un script de sincronizacion hacia produccion:
+
+```bash
+bin/deploy-to-prod.sh
+bin/deploy-to-prod.sh --apply
+```
+
+Guia completa:
+
+- [`DEPLOYMENT.md`](DEPLOYMENT.md)
+
 ## Notas
 
 - Esta version usa branding generico: `Tu Estudio Juridico`
