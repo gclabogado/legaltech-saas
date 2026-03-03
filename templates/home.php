@@ -562,6 +562,160 @@
             font-size: 12px;
             font-weight: 800;
         }
+        .landing-interest {
+            display: grid;
+            gap: 18px;
+            padding: 24px;
+            border-radius: 28px;
+            border: 1px solid rgba(10,102,194,.14);
+            background:
+                radial-gradient(300px 180px at 0% 0%, rgba(10,102,194,.10), transparent 72%),
+                linear-gradient(180deg, rgba(255,255,255,.96), rgba(248,250,252,.94));
+            box-shadow: 0 24px 44px rgba(15,23,42,.08);
+        }
+        .landing-interest-head {
+            display: grid;
+            gap: 10px;
+            max-width: 760px;
+        }
+        .landing-interest-kicker {
+            display: inline-flex;
+            align-items: center;
+            width: max-content;
+            min-height: 32px;
+            padding: 0 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(10,102,194,.12);
+            background: rgba(10,102,194,.08);
+            color: var(--landing-brand-deep);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        .landing-interest-head h2 {
+            margin: 0;
+            font-size: 36px;
+            line-height: .98;
+            letter-spacing: -.04em;
+        }
+        .landing-interest-head p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--landing-muted);
+        }
+        .landing-interest-form {
+            display: grid;
+            gap: 14px;
+        }
+        .landing-interest-grid {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .landing-interest-field {
+            display: grid;
+            gap: 8px;
+        }
+        .landing-interest-field.is-full {
+            grid-column: 1 / -1;
+        }
+        .landing-interest-field label,
+        .landing-interest-choice-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: #1e293b;
+        }
+        .landing-interest-field input,
+        .landing-interest-field textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 16px;
+            border: 1px solid rgba(15,23,42,.10);
+            background: #ffffff;
+            color: var(--landing-ink);
+            font: inherit;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.72);
+        }
+        .landing-interest-field textarea {
+            min-height: 128px;
+            resize: vertical;
+        }
+        .landing-interest-choices {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .landing-interest-choice {
+            position: relative;
+            display: grid;
+            gap: 6px;
+            padding: 16px;
+            border-radius: 18px;
+            border: 1px solid rgba(15,23,42,.10);
+            background: rgba(255,255,255,.94);
+            cursor: pointer;
+        }
+        .landing-interest-choice input {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .landing-interest-choice strong {
+            font-size: 18px;
+            letter-spacing: -.02em;
+        }
+        .landing-interest-choice span {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--landing-muted);
+        }
+        .landing-interest-choice:has(input:checked) {
+            border-color: rgba(10,102,194,.40);
+            box-shadow: 0 0 0 3px rgba(10,102,194,.12);
+            background: linear-gradient(180deg, rgba(236,244,255,.96), rgba(255,255,255,.98));
+        }
+        .landing-interest-submit {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .landing-interest-note {
+            font-size: 13px;
+            color: var(--landing-muted);
+            font-weight: 600;
+        }
+        .landing-flash {
+            padding: 14px 16px;
+            border-radius: 16px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .landing-flash.success {
+            background: rgba(16,185,129,.10);
+            color: #047857;
+            border: 1px solid rgba(16,185,129,.20);
+        }
+        .landing-flash.error {
+            background: rgba(239,68,68,.10);
+            color: #b91c1c;
+            border: 1px solid rgba(239,68,68,.16);
+        }
+        .landing-flash.info {
+            background: rgba(59,130,246,.10);
+            color: #1d4ed8;
+            border: 1px solid rgba(59,130,246,.16);
+        }
+        .landing-honeypot {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
         .landing-bottom-cta {
             display: grid;
             gap: 14px;
@@ -625,7 +779,9 @@
             .landing-decision-grid,
             .landing-audience-grid,
             .landing-value-grid,
-            .landing-materias-grid {
+            .landing-materias-grid,
+            .landing-interest-grid,
+            .landing-interest-choices {
                 grid-template-columns: 1fr;
             }
             .landing-hero-main h1 {
@@ -663,9 +819,13 @@
             }
             .landing-hero-main,
             .landing-panel,
-            .landing-bottom-cta {
+            .landing-bottom-cta,
+            .landing-interest {
                 padding: 18px;
                 border-radius: 22px;
+            }
+            .landing-interest-head h2 {
+                font-size: 30px;
             }
             .landing-open-source {
                 padding: 24px 18px;
@@ -714,6 +874,7 @@
     $isAdminTheme = ($themeEmail === 'gmcalderonlewin@gmail.com');
     $bodyThemeClass = 'theme-black' . ($isAdminTheme ? ' theme-admin' : ' theme-olive');
     $isLoggedIn = !empty($_SESSION['user_id']);
+    $projectInterestOld = is_array($project_interest_old ?? null) ? $project_interest_old : [];
 ?>
 <body class="<?= htmlspecialchars($bodyThemeClass) ?>">
     <main class="landing-shell">
@@ -927,6 +1088,66 @@
                     </article>
                 <?php endforeach; ?>
             </div>
+        </section>
+
+        <section class="landing-interest" id="interes-proyecto">
+            <div class="landing-interest-head">
+                <span class="landing-interest-kicker">Contacto</span>
+                <h2>¿Quieres una prueba o implementarlo en tu estudio?</h2>
+                <p>Cuéntanos qué te interesa y te contactaremos desde el equipo del proyecto para coordinar una demo o conversar una implementación.</p>
+            </div>
+
+            <?php if (!empty($mensaje ?? null)): ?>
+                <div class="landing-flash <?= htmlspecialchars((string)($tipo_mensaje ?? 'info')) ?>">
+                    <?= htmlspecialchars((string)$mensaje) ?>
+                </div>
+            <?php endif; ?>
+
+            <form class="landing-interest-form" method="post" action="/solicitar-proyecto">
+                <div class="landing-honeypot" aria-hidden="true">
+                    <label for="project-website">Website</label>
+                    <input id="project-website" type="text" name="website" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="landing-interest-grid">
+                    <div class="landing-interest-field">
+                        <label for="project-nombre">Nombre</label>
+                        <input id="project-nombre" type="text" name="nombre" value="<?= htmlspecialchars((string)($projectInterestOld['nombre'] ?? '')) ?>" required>
+                    </div>
+                    <div class="landing-interest-field">
+                        <label for="project-email">Email</label>
+                        <input id="project-email" type="email" name="email" value="<?= htmlspecialchars((string)($projectInterestOld['email'] ?? '')) ?>" required>
+                    </div>
+                    <div class="landing-interest-field is-full">
+                        <label for="project-empresa">Estudio / empresa</label>
+                        <input id="project-empresa" type="text" name="empresa" value="<?= htmlspecialchars((string)($projectInterestOld['empresa'] ?? '')) ?>" placeholder="Opcional">
+                    </div>
+                    <div class="landing-interest-field is-full">
+                        <span class="landing-interest-choice-title">¿Qué te interesa?</span>
+                        <div class="landing-interest-choices">
+                            <label class="landing-interest-choice">
+                                <input type="radio" name="interes" value="prueba" <?= (($projectInterestOld['interes'] ?? '') === 'prueba' || empty($projectInterestOld['interes'])) ? 'checked' : '' ?> required>
+                                <strong>Quiero una prueba</strong>
+                                <span>Muéstrenme el producto, el flujo y cómo podría verse en operación.</span>
+                            </label>
+                            <label class="landing-interest-choice">
+                                <input type="radio" name="interes" value="implementar" <?= (($projectInterestOld['interes'] ?? '') === 'implementar') ? 'checked' : '' ?> required>
+                                <strong>Quiero implementarlo</strong>
+                                <span>Quiero conversar cómo llevar esta base a mi estudio o proyecto legal.</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="landing-interest-field is-full">
+                        <label for="project-mensaje">Mensaje</label>
+                        <textarea id="project-mensaje" name="mensaje" placeholder="Cuéntanos brevemente qué necesitas o qué te gustaría ver."><?= htmlspecialchars((string)($projectInterestOld['mensaje'] ?? '')) ?></textarea>
+                    </div>
+                </div>
+
+                <div class="landing-interest-submit">
+                    <button class="landing-btn solid" type="submit">Quiero que me contacten</button>
+                    <span class="landing-interest-note">Si el entorno no tiene correo activo, verás un mensaje informativo en vez de un envío real.</span>
+                </div>
+            </form>
         </section>
 
         <section class="landing-bottom-cta">

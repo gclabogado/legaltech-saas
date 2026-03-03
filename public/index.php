@@ -220,6 +220,52 @@ function sendAdminEventEmail(string $subject, string $html, string $text = ''): 
     ]);
 }
 
+function notifyProjectInterest(array $payload): array {
+    $to = trim((string)envOrDefault('PROJECT_INTEREST_EMAIL', 'gmcalderonlewin@gmail.com'));
+    if (!filter_var($to, FILTER_VALIDATE_EMAIL)) {
+        return ['ok' => false, 'error' => 'missing_project_interest_email'];
+    }
+
+    $nombre = trim((string)($payload['nombre'] ?? ''));
+    $email = trim((string)($payload['email'] ?? ''));
+    $empresa = trim((string)($payload['empresa'] ?? ''));
+    $interes = trim((string)($payload['interes'] ?? ''));
+    $mensaje = trim((string)($payload['mensaje'] ?? ''));
+    $host = trim((string)($payload['host'] ?? ''));
+
+    $interesLabelMap = [
+        'prueba' => 'Quiere una prueba',
+        'implementar' => 'Quiere implementarlo en su estudio',
+    ];
+    $interesLabel = $interesLabelMap[$interes] ?? $interes;
+
+    $subject = 'Nuevo interes en el proyecto: ' . ($interesLabel !== '' ? $interesLabel : 'Contacto');
+    $html = '<p>Se registró un nuevo interes desde la landing pública.</p>'
+        . '<ul>'
+        . '<li><strong>Nombre:</strong> ' . htmlspecialchars($nombre !== '' ? $nombre : 'Sin nombre', ENT_QUOTES, 'UTF-8') . '</li>'
+        . '<li><strong>Email:</strong> ' . htmlspecialchars($email !== '' ? $email : 'Sin email', ENT_QUOTES, 'UTF-8') . '</li>'
+        . '<li><strong>Empresa:</strong> ' . htmlspecialchars($empresa !== '' ? $empresa : 'No informada', ENT_QUOTES, 'UTF-8') . '</li>'
+        . '<li><strong>Interés:</strong> ' . htmlspecialchars($interesLabel !== '' ? $interesLabel : 'No informado', ENT_QUOTES, 'UTF-8') . '</li>'
+        . '<li><strong>Host:</strong> ' . htmlspecialchars($host !== '' ? $host : 'Desconocido', ENT_QUOTES, 'UTF-8') . '</li>'
+        . '</ul>'
+        . ($mensaje !== '' ? '<p><strong>Mensaje:</strong><br>' . nl2br(htmlspecialchars($mensaje, ENT_QUOTES, 'UTF-8')) . '</p>' : '');
+    $text = "Se registró un nuevo interes desde la landing pública.\n\n"
+        . 'Nombre: ' . ($nombre !== '' ? $nombre : 'Sin nombre') . "\n"
+        . 'Email: ' . ($email !== '' ? $email : 'Sin email') . "\n"
+        . 'Empresa: ' . ($empresa !== '' ? $empresa : 'No informada') . "\n"
+        . 'Interés: ' . ($interesLabel !== '' ? $interesLabel : 'No informado') . "\n"
+        . 'Host: ' . ($host !== '' ? $host : 'Desconocido') . "\n"
+        . ($mensaje !== '' ? "\nMensaje:\n{$mensaje}\n" : '');
+
+    return sendResendEmail([
+        'to' => [$to],
+        'subject' => $subject,
+        'html' => $html,
+        'text' => $text,
+        'reply_to' => $email,
+    ]);
+}
+
 function notifyProfessionalAccessRequest(array $lawyer, array $overrides = []): array {
     if (!resendIsConfigured()) {
         return ['ok' => false, 'error' => 'resend_not_configured'];
@@ -3429,6 +3475,8 @@ $homeLandingHandler = function (Request $request, Response $response) use ($rend
     $pdo = getDB();
     $profesionales = (int)$pdo->query("SELECT COUNT(*) FROM abogados WHERE rol = 'abogado'")->fetchColumn();
     $clientesBuscando = (int)$pdo->query("SELECT COUNT(*) FROM abogados WHERE rol = 'cliente'")->fetchColumn();
+    $projectInterestOld = $_SESSION['project_interest_old'] ?? [];
+    unset($_SESSION['project_interest_old']);
     $materiasInicio = [];
     foreach (lawyerMateriasCanonicas() as $mat) {
         $slug = materiaSlug($mat);
@@ -3449,8 +3497,62 @@ $homeLandingHandler = function (Request $request, Response $response) use ($rend
             'clientes' => $clientesBuscando,
         ],
         'materias_inicio' => $materiasInicio,
-    ]);
+        'project_interest_old' => is_array($projectInterestOld) ? $projectInterestOld : [],
+    ] + consumeSessionFlashMessage());
 };
+
+$app->post('/solicitar-proyecto', function (Request $request, Response $response) {
+    $data = (array)($request->getParsedBody() ?? []);
+    $nombre = trim((string)($data['nombre'] ?? ''));
+    $email = trim((string)($data['email'] ?? ''));
+    $empresa = trim((string)($data['empresa'] ?? ''));
+    $interes = trim((string)($data['interes'] ?? ''));
+    $mensaje = trim((string)($data['mensaje'] ?? ''));
+    $website = trim((string)($data['website'] ?? ''));
+
+    $_SESSION['project_interest_old'] = [
+        'nombre' => $nombre,
+        'email' => $email,
+        'empresa' => $empresa,
+        'interes' => $interes,
+        'mensaje' => $mensaje,
+    ];
+
+    if ($website !== '') {
+        $_SESSION['mensaje'] = '✅ Gracias. Recibimos tu interés y te contactaremos.';
+        $_SESSION['tipo_mensaje'] = 'success';
+        unset($_SESSION['project_interest_old']);
+        return $response->withHeader('Location', '/#interes-proyecto')->withStatus(302);
+    }
+
+    if ($nombre === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || !in_array($interes, ['prueba', 'implementar'], true)) {
+        $_SESSION['mensaje'] = '⚠️ Completa nombre, email válido y el tipo de interés.';
+        $_SESSION['tipo_mensaje'] = 'error';
+        return $response->withHeader('Location', '/#interes-proyecto')->withStatus(302);
+    }
+
+    $send = notifyProjectInterest([
+        'nombre' => $nombre,
+        'email' => $email,
+        'empresa' => $empresa,
+        'interes' => $interes,
+        'mensaje' => $mensaje,
+        'host' => (string)$request->getUri()->getHost(),
+    ]);
+
+    if (!($send['ok'] ?? false)) {
+        $_SESSION['mensaje'] = resendIsConfigured()
+            ? '⚠️ No pudimos enviar tu solicitud ahora. Intenta nuevamente.'
+            : 'ℹ️ El formulario funciona, pero el correo está desactivado en este entorno.';
+        $_SESSION['tipo_mensaje'] = resendIsConfigured() ? 'error' : 'info';
+        return $response->withHeader('Location', '/#interes-proyecto')->withStatus(302);
+    }
+
+    unset($_SESSION['project_interest_old']);
+    $_SESSION['mensaje'] = '✅ Gracias. Te contactaremos pronto para coordinar una prueba o implementación.';
+    $_SESSION['tipo_mensaje'] = 'success';
+    return $response->withHeader('Location', '/#interes-proyecto')->withStatus(302);
+});
 
 $app->get('/', $homeLandingHandler);
 
