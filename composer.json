@@ -1,0 +1,8 @@
+{
+    "require": {
+        "slim/slim": "^4.15",
+        "slim/psr7": "^1.6",
+        "slim/php-view": "^3.4",
+        "google/apiclient": "^2.15.0"
+    }
+}
