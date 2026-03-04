@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Estudio Juridico | Abogados en Chile y workspace profesional</title>
+    <title>Tu Estudio Juridico | Software legal open source para estudios juridicos</title>
     <link rel="canonical" href="https://example.com/">
-    <meta name="description" content="Encuentra abogados en Chile y opera tu despacho desde un dashboard profesional. Tu Estudio Juridico combina directorio, leads, cotizaciones y workspace legal.">
-    <meta property="og:title" content="Tu Estudio Juridico | Abogados en Chile y workspace profesional">
-    <meta property="og:description" content="Encuentra abogados en Chile y opera tu despacho desde un dashboard profesional. Tu Estudio Juridico combina directorio, leads, cotizaciones y workspace legal.">
+    <meta name="description" content="Software legal open source para estudios juridicos y abogados: leads, cotizaciones, directorio profesional y workspace operativo en una base lista para forkear e implementar.">
+    <meta property="og:title" content="Tu Estudio Juridico | Software legal open source para estudios juridicos">
+    <meta property="og:description" content="Software legal open source para estudios juridicos y abogados: leads, cotizaciones, directorio profesional y workspace operativo en una base lista para forkear e implementar.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://example.com/">
     <meta property="og:image" content="https://example.com/og-lawyers-1200x630.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tu Estudio Juridico | Abogados en Chile y workspace profesional">
-    <meta name="twitter:description" content="Encuentra abogados en Chile y opera tu despacho desde un dashboard profesional. Tu Estudio Juridico combina directorio, leads, cotizaciones y workspace legal.">
+    <meta name="twitter:title" content="Tu Estudio Juridico | Software legal open source para estudios juridicos">
+    <meta name="twitter:description" content="Software legal open source para estudios juridicos y abogados: leads, cotizaciones, directorio profesional y workspace operativo en una base lista para forkear e implementar.">
     <meta name="twitter:image" content="https://example.com/og-lawyers-1200x630.png">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="stylesheet" href="/app-shell.css?v=202602231">
@@ -881,21 +881,21 @@
         <header class="landing-topbar">
             <div class="landing-brand">
                 <strong>Tu Estudio Juridico</strong>
-                <span>Abogados en Chile + workspace profesional para estudios y abogados independientes</span>
+                <span>Software legal open source para estudios juridicos, equipos y abogados independientes</span>
             </div>
             <div class="landing-top-actions">
-                <a class="landing-link" href="/explorar">Buscar abogado</a>
+                <a class="landing-link" href="/#interes-proyecto">Quiero una prueba</a>
                 <?php if ($isLoggedIn): ?>
                     <a class="landing-btn ghost" href="/dashboard">Ir al dashboard</a>
                 <?php else: ?>
-                    <a class="landing-btn ghost" href="/acceso-profesional">Soy abogado</a>
+                    <a class="landing-btn ghost" href="/acceso-profesional">Ver acceso profesional</a>
                 <?php endif; ?>
             </div>
         </header>
 
         <section class="landing-open-source">
             <div class="landing-open-source-head">
-                <span class="landing-open-source-kicker">Open Source</span>
+                <span class="landing-open-source-kicker">SaaS Open Source</span>
                 <span class="landing-open-source-meta">Release publico en GitHub</span>
             </div>
             <div class="landing-open-source-badges">
@@ -904,13 +904,13 @@
                 <span class="landing-open-source-badge">Fork-ready</span>
             </div>
             <div class="landing-open-source-lead">
-                <h2>Construye sobre una base legaltech real, abierta y lista para evolucionar.</h2>
-                <p>El proyecto ya vive como codigo abierto. Explora una base SaaS legal hecha en PHP + Slim, estudia el flujo de producto y parte con un repositorio que ya corre, ya tiene preview y ya puede extenderse.</p>
+                <h2>El software legal que ya corre, ya capta demanda y ahora tambien se puede implementar.</h2>
+                <p>Esta base legaltech vive como codigo abierto y se presenta como producto B2B: una operacion para estudios juridicos y abogados que quieren captar, cotizar y operar mejor sobre una base real.</p>
             </div>
             <div class="landing-open-source-proof">
                 <span>Codigo real, no template vacio</span>
                 <span>Deploy documentado</span>
-                <span>Listo para forkear</span>
+                <span>Base lista para demo, fork e implementacion</span>
             </div>
             <div class="landing-open-source-actions">
                 <a class="landing-open-source-link primary" href="https://github.com/gclabogado/legaltech-saas" target="_blank" rel="noreferrer">Ver repositorio en GitHub</a>
@@ -930,42 +930,42 @@
                 <article class="landing-open-source-stat">
                     <span>Uso ideal</span>
                     <strong>Fork + Ship</strong>
-                    <small>Base lista para estudiar, adaptar y convertir en tu propio producto.</small>
+                    <small>Base lista para estudiar, adaptar y convertir en tu propio producto legal B2B.</small>
                 </article>
             </div>
         </section>
 
         <section class="landing-hero">
             <div class="landing-hero-main">
-                <span class="landing-kicker">Legaltech para Chile</span>
-                <h1>Dos caminos claros: encontrar abogado o trabajar como abogado.</h1>
-                <p>Tu Estudio Juridico combina marketplace legal para clientes y workspace profesional para abogados. La decisión principal debe ser obvia desde el primer vistazo.</p>
+                <span class="landing-kicker">SaaS legal para Chile</span>
+                <h1>El software legal open source para estudios y abogados que quieren captar, cotizar y operar mejor.</h1>
+                <p>Tu Estudio Juridico combina captacion comercial, directorio profesional y workspace operativo para firmas, equipos y abogados que quieren partir con una base legaltech real y visible.</p>
 
                 <div class="landing-decision-grid">
                     <article class="landing-decision-card is-light">
-                        <strong>Buscar un abogado</strong>
-                        <p>Explora perfiles, compara materias y submaterias, revisa cobertura y entra rápido al profesional correcto.</p>
+                        <strong>Quiero implementar esta base</strong>
+                        <p>Solicita una prueba, revisa el producto y conversa como adaptar esta base open source a tu estudio, equipo o proyecto legal.</p>
                         <div class="landing-decision-actions">
-                            <a class="landing-btn solid" href="/explorar">Explorar abogados</a>
+                            <a class="landing-btn solid" href="/#interes-proyecto">Pedir una prueba</a>
                         </div>
                     </article>
                     <article class="landing-decision-card">
-                        <strong>Soy abogado</strong>
-                        <p>Activa tu perfil profesional y usa leads, cotizaciones, catálogo y dashboard en un producto legal tipo SaaS.</p>
+                        <strong>Quiero ver el producto funcionando</strong>
+                        <p>Explora el acceso profesional y entiende como conviven leads, cotizaciones y operacion diaria en una sola capa de producto.</p>
                         <div class="landing-decision-actions">
                             <?php if ($isLoggedIn): ?>
                                 <a class="landing-btn secondary" href="/dashboard">Ir al dashboard</a>
                             <?php else: ?>
-                                <a class="landing-btn secondary" href="/acceso-profesional">Quiero acceso profesional</a>
+                                <a class="landing-btn secondary" href="/acceso-profesional">Ver acceso profesional</a>
                             <?php endif; ?>
                         </div>
                     </article>
                 </div>
 
                 <div class="landing-proof-row">
-                    <span class="landing-proof-chip">Marketplace legal + SaaS operativo</span>
-                    <span class="landing-proof-chip">Leads y cotizaciones en un solo flujo</span>
-                    <span class="landing-proof-chip">Preparado para abogados y teams</span>
+                    <span class="landing-proof-chip">Leads, cotizaciones y operacion en un solo flujo</span>
+                    <span class="landing-proof-chip">Preparado para abogados, estudios y teams</span>
+                    <span class="landing-proof-chip">Base lista para demo e implementacion</span>
                 </div>
             </div>
 
@@ -979,7 +979,7 @@
                     <article class="landing-stat-card">
                         <span>Clientes</span>
                         <strong><?= number_format((int)($stats_inicio['clientes'] ?? 0), 0, ',', '.') ?></strong>
-                        <p>Personas que buscan o ya han buscado representación legal.</p>
+                        <p>Usuarios y demanda captada para convertir en conversación comercial o derivacion.</p>
                     </article>
                 </section>
 
@@ -1015,13 +1015,13 @@
 
         <section class="landing-value">
             <div>
-                <h2>Un producto, dos motores</h2>
-                <p>Tu Estudio Juridico te ayuda a captar clientes desde el directorio y a operar mejor desde un dashboard profesional. Esa combinación es la ventaja real del producto.</p>
+                <h2>Un sistema comercial y operativo para firmas legales</h2>
+                <p>Tu Estudio Juridico no se presenta solo como directorio. La propuesta central es ayudar a estudios y abogados a captar demanda, ordenar cotizaciones y operar con una base mas cercana a un SaaS que a un sitio institucional.</p>
             </div>
             <div class="landing-value-grid">
                 <article class="landing-value-card">
-                    <strong>Adquisición</strong>
-                    <p>Explorar abogados, filtrar por materia, región, comuna y submaterias para que el cliente llegue al profesional correcto.</p>
+                    <strong>Captacion</strong>
+                    <p>Directorio, materias, cobertura y discovery para convertir trafico legal en oportunidades reales para abogados y estudios.</p>
                 </article>
                 <article class="landing-value-card">
                     <strong>Operación comercial</strong>
@@ -1036,39 +1036,39 @@
 
         <section class="landing-audience-grid">
             <article class="landing-panel landing-audience-card">
-                <h2>Para clientes</h2>
-                <p>Encuentra un abogado indicado sin perder tiempo comparando perfiles genéricos o directorios desordenados.</p>
+                <h2>Para estudios y abogados</h2>
+                <p>Activa un sistema que ayude a ordenar leads, cotizaciones, catalogo y operacion diaria con una narrativa claramente B2B.</p>
                 <div class="landing-list">
                     <div class="landing-list-item">
-                        <strong>Filtra por materia y submateria</strong>
-                        <span>Penal, familia, laboral, civil y más, con filtros por ubicación y cobertura.</span>
+                        <strong>Leads en una bandeja clara</strong>
+                        <span>Prioriza rapido, responde mejor y evita enfriar oportunidades entrantes.</span>
                     </div>
                     <div class="landing-list-item">
-                        <strong>Compara perfiles con contexto</strong>
-                        <span>Universidad, experiencia, cobertura y áreas reales de práctica.</span>
+                        <strong>Cotizaciones listas para enviar</strong>
+                        <span>Desde catalogo de servicios hasta propuesta y PDF dentro del mismo flujo.</span>
                     </div>
                     <div class="landing-list-item">
-                        <strong>Contacta más rápido</strong>
-                        <span>El objetivo no es navegar. Es llegar rápido al abogado correcto.</span>
+                        <strong>Workspace legal moderno</strong>
+                        <span>Marca, rendimiento, plan y team juridico dentro de un panel con ambicion SaaS.</span>
                     </div>
                 </div>
             </article>
 
             <article class="landing-panel landing-audience-card">
-                <h2>Para abogados</h2>
-                <p>Activa tu perfil profesional y usa un sistema que ayude a ordenar leads, cotizaciones y operación diaria.</p>
+                <h2>Para clientes y usuarios finales</h2>
+                <p>La capa B2C sigue existiendo, pero como motor de adquisicion para el producto principal orientado a firmas legales.</p>
                 <div class="landing-list">
                     <div class="landing-list-item">
-                        <strong>Leads en una bandeja clara</strong>
-                        <span>Prioriza rápido, responde mejor y evita enfriar oportunidades.</span>
+                        <strong>Exploracion mas clara</strong>
+                        <span>Materias, submaterias, ubicacion y cobertura para llegar mas rapido al profesional correcto.</span>
                     </div>
                     <div class="landing-list-item">
-                        <strong>Cotizaciones listas para enviar</strong>
-                        <span>Desde catálogo de servicios hasta mensaje y PDF en un solo flujo.</span>
+                        <strong>Perfiles con contexto</strong>
+                        <span>Experiencia, especialidad y señales de confianza para orientar mejor la decision.</span>
                     </div>
                     <div class="landing-list-item">
-                        <strong>Workspace legal moderno</strong>
-                        <span>Marca, rendimiento, plan y team jurídico dentro de un mismo panel.</span>
+                        <strong>Contacto mas rapido</strong>
+                        <span>Menos friccion para conectar con el abogado correcto y menos ruido de directorio generico.</span>
                     </div>
                 </div>
             </article>
@@ -1151,14 +1151,14 @@
         </section>
 
         <section class="landing-bottom-cta">
-            <h2>Tu Estudio Juridico no debería sentirse como un directorio viejo.</h2>
-            <p>La idea correcta es esta: adquisición para clientes, operación diaria para abogados y una base real para crecer a suscripción, branding y colaboración de estudio.</p>
+            <h2>Tu Estudio Juridico quiere posicionarse como software legal, no solo como directorio.</h2>
+            <p>La historia central del producto es clara: una base open source para estudios, equipos y abogados que quieren ver el software funcionando o implementarlo sobre su propia marca.</p>
             <div class="landing-bottom-actions">
-                <a class="landing-btn solid" href="/explorar">Explorar abogados</a>
+                <a class="landing-btn solid" href="/#interes-proyecto">Quiero una prueba</a>
                 <?php if ($isLoggedIn): ?>
                     <a class="landing-btn ghost" href="/dashboard">Ir al dashboard</a>
                 <?php else: ?>
-                    <a class="landing-btn ghost" href="/acceso-profesional">Activar perfil profesional</a>
+                    <a class="landing-btn ghost" href="/acceso-profesional">Ver acceso profesional</a>
                 <?php endif; ?>
             </div>
         </section>
