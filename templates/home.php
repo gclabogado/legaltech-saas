@@ -327,6 +327,36 @@
             line-height: 1.55;
             color: rgba(239,246,255,.86);
         }
+        .landing-launch-strip {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .landing-launch-chip {
+            display: grid;
+            gap: 6px;
+            padding: 14px;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,.14);
+            background: rgba(255,255,255,.08);
+        }
+        .landing-launch-chip span {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: rgba(239,246,255,.68);
+        }
+        .landing-launch-chip strong {
+            font-size: 18px;
+            line-height: 1.15;
+            letter-spacing: -.03em;
+        }
+        .landing-launch-chip small {
+            font-size: 12px;
+            line-height: 1.45;
+            color: rgba(239,246,255,.78);
+        }
         .landing-hero-actions {
             display: flex;
             gap: 12px;
@@ -841,6 +871,9 @@
             .landing-open-source-stats {
                 grid-template-columns: 1fr;
             }
+            .landing-launch-strip {
+                grid-template-columns: 1fr;
+            }
             .landing-hero-main h1 {
                 font-size: 34px;
                 line-height: .96;
@@ -941,6 +974,24 @@
                 <h1>El software legal open source para estudios y abogados que quieren captar, cotizar y operar mejor.</h1>
                 <p>Tu Estudio Juridico combina captacion comercial, directorio profesional y workspace operativo para firmas, equipos y abogados que quieren partir con una base legaltech real y visible.</p>
 
+                <div class="landing-launch-strip">
+                    <article class="landing-launch-chip">
+                        <span>Go Live</span>
+                        <strong>Preview real en linea</strong>
+                        <small>Producto visible, dominio activo y flujo demo listo para revisar.</small>
+                    </article>
+                    <article class="landing-launch-chip">
+                        <span>Open Repo</span>
+                        <strong>Codigo listo para fork</strong>
+                        <small>Base abierta con deploy, documentacion y estructura ya publicada.</small>
+                    </article>
+                    <article class="landing-launch-chip">
+                        <span>Use Case</span>
+                        <strong>B2B legal claro</strong>
+                        <small>Captacion, cotizacion y operacion diaria en una sola propuesta.</small>
+                    </article>
+                </div>
+
                 <div class="landing-decision-grid">
                     <article class="landing-decision-card is-light">
                         <strong>Quiero implementar esta base</strong>
@@ -984,29 +1035,29 @@
                 </section>
 
                 <section class="landing-panel landing-command-card">
-                    <h2>Centro de comando del abogado</h2>
-                    <p>No es solo un directorio. Es una operación diaria más ordenada para captar, cotizar y cerrar mejor.</p>
+                    <h2>Demo operativa del producto</h2>
+                    <p>Lo que se ve aqui no es un mockup. Es la capa visible de una base que ya combina captacion, ventas y workspace legal.</p>
                     <div class="landing-command-preview">
                         <div class="landing-command-item">
                             <div>
-                                <strong>Leads en bandeja</strong>
-                                <span>Captura rápida, seguimiento comercial y estado del caso sin perder contexto.</span>
+                                <strong>Inbox comercial</strong>
+                                <span>Captura rapida, seguimiento comercial y estado del caso sin perder contexto.</span>
                             </div>
-                            <span class="landing-command-pill">Inbox</span>
+                            <span class="landing-command-pill">Leads</span>
                         </div>
                         <div class="landing-command-item">
                             <div>
-                                <strong>Cotizador y PDF</strong>
+                                <strong>Cotizador listo para venta</strong>
                                 <span>Servicios, montos, anticipo y propuesta lista para WhatsApp, email o PDF.</span>
                             </div>
                             <span class="landing-command-pill">Ventas</span>
                         </div>
                         <div class="landing-command-item">
                             <div>
-                                <strong>Workspace profesional</strong>
-                                <span>Marca comercial, catálogo, rendimiento y team jurídico en la misma capa.</span>
+                                <strong>Workspace white-label</strong>
+                                <span>Marca comercial, catalogo, rendimiento y team juridico en la misma capa.</span>
                             </div>
-                            <span class="landing-command-pill">SaaS</span>
+                            <span class="landing-command-pill">Deploy</span>
                         </div>
                     </div>
                 </section>
