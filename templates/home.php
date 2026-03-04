@@ -23,21 +23,22 @@
         * { box-sizing: border-box; }
         a { color: inherit; text-decoration: none; }
         :root {
-            --landing-bg: #eef3fb;
-            --landing-ink: #0f172a;
-            --landing-muted: #5b6777;
-            --landing-line: rgba(15, 23, 42, .10);
-            --landing-brand: #0a66c2;
-            --landing-brand-deep: #0f4c81;
-            --landing-panel: rgba(255, 255, 255, .78);
+            --landing-bg: #edf3fb;
+            --landing-ink: #0b1424;
+            --landing-muted: #566476;
+            --landing-line: rgba(11, 20, 36, .10);
+            --landing-brand: #1266c4;
+            --landing-brand-deep: #0b427b;
+            --landing-brand-soft: #e7f0fb;
+            --landing-panel: rgba(255, 255, 255, .84);
         }
         body {
             margin: 0;
             color: var(--landing-ink);
             background:
-                radial-gradient(780px 420px at 0% 0%, rgba(10,102,194,.11), transparent 55%),
-                radial-gradient(720px 360px at 100% 0%, rgba(15,76,129,.10), transparent 48%),
-                linear-gradient(180deg, #f4f7fc 0%, #eef3fb 46%, #f8fbff 100%);
+                radial-gradient(900px 460px at 0% 0%, rgba(18,102,196,.16), transparent 55%),
+                radial-gradient(760px 420px at 100% 0%, rgba(11,66,123,.14), transparent 48%),
+                linear-gradient(180deg, #f5f8fd 0%, #edf3fb 46%, #fbfdff 100%);
         }
         .landing-shell {
             max-width: 1320px;
@@ -54,9 +55,9 @@
             padding: 14px 16px;
             border-radius: 20px;
             border: 1px solid var(--landing-line);
-            background: rgba(255,255,255,.72);
+            background: rgba(255,255,255,.82);
             backdrop-filter: blur(12px);
-            box-shadow: 0 18px 40px rgba(15,23,42,.06);
+            box-shadow: 0 18px 40px rgba(11,20,36,.07);
         }
         .landing-brand {
             display: grid;
@@ -93,14 +94,14 @@
             gap: 22px;
             padding: 34px;
             border-radius: 32px;
-            border: 1px solid rgba(10,102,194,.12);
+            border: 1px solid rgba(18,102,196,.14);
             background:
-                radial-gradient(220px 220px at 14% 18%, rgba(255,255,255,.10), transparent 74%),
-                radial-gradient(320px 180px at 0% 0%, rgba(255,255,255,.14), transparent 72%),
-                radial-gradient(340px 180px at 100% 100%, rgba(255,255,255,.08), transparent 74%),
-                linear-gradient(145deg, #091625 0%, #0d2947 48%, #0a66c2 100%);
+                radial-gradient(220px 220px at 14% 18%, rgba(255,255,255,.12), transparent 74%),
+                radial-gradient(320px 180px at 0% 0%, rgba(255,255,255,.16), transparent 72%),
+                radial-gradient(340px 180px at 100% 100%, rgba(255,255,255,.10), transparent 74%),
+                linear-gradient(145deg, #08121f 0%, #0d2a49 48%, #1266c4 100%);
             color: #f8fbff;
-            box-shadow: 0 30px 60px rgba(15,23,42,.16);
+            box-shadow: 0 30px 60px rgba(11,20,36,.18);
             text-align: center;
             justify-items: center;
             overflow: hidden;
@@ -159,7 +160,7 @@
             padding: 0 14px;
             border-radius: 999px;
             border: 1px solid rgba(255,255,255,.12);
-            background: rgba(255,255,255,.08);
+            background: rgba(255,255,255,.10);
             color: rgba(239,246,255,.94);
             font-size: 12px;
             font-weight: 800;
@@ -180,7 +181,7 @@
             padding: 0 18px;
             border-radius: 16px;
             border: 1px solid rgba(255,255,255,.18);
-            background: rgba(255,255,255,.08);
+            background: rgba(255,255,255,.10);
             color: #ffffff;
             font-size: 15px;
             font-weight: 800;
@@ -210,7 +211,7 @@
             padding: 0 12px;
             border-radius: 999px;
             border: 1px solid rgba(255,255,255,.16);
-            background: rgba(255,255,255,.08);
+            background: rgba(255,255,255,.10);
             color: rgba(239,246,255,.94);
             font-size: 12px;
             font-weight: 800;
@@ -229,7 +230,7 @@
             padding: 16px;
             border-radius: 20px;
             border: 1px solid rgba(255,255,255,.12);
-            background: rgba(255,255,255,.07);
+            background: rgba(255,255,255,.09);
             text-align: left;
         }
         .landing-open-source-stat span {
@@ -288,13 +289,13 @@
         .landing-hero-main {
             padding: 28px;
             border-radius: 30px;
-            border: 1px solid rgba(10,102,194,.12);
+            border: 1px solid rgba(18,102,196,.14);
             background:
-                radial-gradient(280px 170px at 0% 0%, rgba(255,255,255,.14), transparent 72%),
-                radial-gradient(280px 170px at 100% 100%, rgba(255,255,255,.09), transparent 72%),
-                linear-gradient(145deg, #0f172a 0%, #11335b 56%, #0a66c2 100%);
+                radial-gradient(280px 170px at 0% 0%, rgba(255,255,255,.16), transparent 72%),
+                radial-gradient(280px 170px at 100% 100%, rgba(255,255,255,.10), transparent 72%),
+                linear-gradient(145deg, #0b1424 0%, #123a67 56%, #1266c4 100%);
             color: #f8fbff;
-            box-shadow: 0 30px 60px rgba(15,23,42,.18);
+            box-shadow: 0 30px 60px rgba(11,20,36,.20);
             display: grid;
             gap: 18px;
             align-content: start;
@@ -307,7 +308,7 @@
             padding: 0 12px;
             border-radius: 999px;
             border: 1px solid rgba(255,255,255,.16);
-            background: rgba(255,255,255,.08);
+            background: rgba(255,255,255,.10);
             font-size: 11px;
             font-weight: 800;
             letter-spacing: .08em;
@@ -378,13 +379,13 @@
         }
         .landing-btn.primary {
             background: #ffffff;
-            color: #0f172a;
-            box-shadow: 0 14px 24px rgba(15,23,42,.16);
+            color: #0b1424;
+            box-shadow: 0 16px 30px rgba(11,20,36,.18);
         }
         .landing-btn.secondary {
-            background: rgba(255,255,255,.08);
+            background: rgba(255,255,255,.10);
             color: #ffffff;
-            border-color: rgba(255,255,255,.18);
+            border-color: rgba(255,255,255,.22);
         }
         .landing-proof-row {
             display: flex;
@@ -398,8 +399,8 @@
             min-height: 34px;
             padding: 0 12px;
             border-radius: 999px;
-            background: rgba(255,255,255,.08);
-            border: 1px solid rgba(255,255,255,.14);
+            background: rgba(255,255,255,.10);
+            border: 1px solid rgba(255,255,255,.16);
             color: rgba(239,246,255,.92);
             font-size: 12px;
             font-weight: 700;
@@ -414,7 +415,7 @@
             border: 1px solid var(--landing-line);
             background: var(--landing-panel);
             backdrop-filter: blur(12px);
-            box-shadow: 0 20px 40px rgba(15,23,42,.08);
+            box-shadow: 0 20px 40px rgba(11,20,36,.08);
         }
         .landing-stats-grid {
             display: grid;
@@ -425,7 +426,7 @@
             padding: 18px;
             border-radius: 20px;
             border: 1px solid rgba(15,23,42,.08);
-            background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(248,250,252,.92));
+            background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(242,247,253,.94));
             box-shadow: inset 0 1px 0 rgba(255,255,255,.72);
         }
         .landing-stat-card span {
@@ -481,7 +482,7 @@
             gap: 14px;
             padding: 14px;
             border-radius: 18px;
-            background: #f8fbff;
+            background: linear-gradient(180deg, #fbfdff, var(--landing-brand-soft));
             border: 1px solid rgba(15,23,42,.08);
         }
         .landing-command-item strong {
@@ -503,7 +504,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: #e8f3ff;
+            background: #deebfb;
             color: var(--landing-brand);
             font-size: 11px;
             font-weight: 800;
@@ -521,8 +522,8 @@
             padding: 18px;
             border-radius: 22px;
             border: 1px solid var(--landing-line);
-            background: rgba(255,255,255,.86);
-            box-shadow: 0 16px 34px rgba(15,23,42,.06);
+            background: rgba(255,255,255,.90);
+            box-shadow: 0 18px 38px rgba(11,20,36,.06);
             display: grid;
             gap: 10px;
         }
@@ -554,7 +555,7 @@
             padding: 14px;
             border-radius: 18px;
             border: 1px solid rgba(15,23,42,.08);
-            background: #f8fbff;
+            background: linear-gradient(180deg, #fbfdff, #f0f6fd);
         }
         .landing-list-item strong {
             font-size: 14px;
@@ -576,7 +577,7 @@
             border-radius: 20px;
             border: 1px solid rgba(15,23,42,.08);
             background: #ffffff;
-            box-shadow: 0 16px 34px rgba(15,23,42,.05);
+            box-shadow: 0 18px 36px rgba(11,20,36,.05);
         }
         .landing-materia-card strong {
             font-size: 16px;
@@ -597,11 +598,11 @@
             gap: 18px;
             padding: 24px;
             border-radius: 28px;
-            border: 1px solid rgba(10,102,194,.14);
+            border: 1px solid rgba(18,102,196,.16);
             background:
-                radial-gradient(300px 180px at 0% 0%, rgba(10,102,194,.10), transparent 72%),
-                linear-gradient(180deg, rgba(255,255,255,.96), rgba(248,250,252,.94));
-            box-shadow: 0 24px 44px rgba(15,23,42,.08);
+                radial-gradient(300px 180px at 0% 0%, rgba(18,102,196,.12), transparent 72%),
+                linear-gradient(180deg, rgba(255,255,255,.97), rgba(244,248,253,.95));
+            box-shadow: 0 24px 44px rgba(11,20,36,.08);
         }
         .landing-interest-head {
             display: grid;
@@ -615,8 +616,8 @@
             min-height: 32px;
             padding: 0 12px;
             border-radius: 999px;
-            border: 1px solid rgba(10,102,194,.12);
-            background: rgba(10,102,194,.08);
+            border: 1px solid rgba(18,102,196,.14);
+            background: rgba(18,102,196,.09);
             color: var(--landing-brand-deep);
             font-size: 11px;
             font-weight: 800;
@@ -703,8 +704,8 @@
             color: var(--landing-muted);
         }
         .landing-interest-choice:has(input:checked) {
-            border-color: rgba(10,102,194,.40);
-            box-shadow: 0 0 0 3px rgba(10,102,194,.12);
+            border-color: rgba(18,102,196,.40);
+            box-shadow: 0 0 0 3px rgba(18,102,196,.12);
             background: linear-gradient(180deg, rgba(236,244,255,.96), rgba(255,255,255,.98));
         }
         .landing-interest-submit {
@@ -751,12 +752,12 @@
             gap: 14px;
             padding: 24px;
             border-radius: 28px;
-            border: 1px solid rgba(10,102,194,.12);
+            border: 1px solid rgba(18,102,196,.14);
             background:
-                radial-gradient(340px 180px at 0% 100%, rgba(10,102,194,.12), transparent 72%),
-                radial-gradient(260px 150px at 100% 0%, rgba(15,76,129,.10), transparent 70%),
+                radial-gradient(340px 180px at 0% 100%, rgba(18,102,196,.14), transparent 72%),
+                radial-gradient(260px 150px at 100% 0%, rgba(11,66,123,.12), transparent 70%),
                 linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
-            box-shadow: 0 24px 48px rgba(15,23,42,.08);
+            box-shadow: 0 24px 48px rgba(11,20,36,.08);
             text-align: center;
         }
         .landing-bottom-cta h2 {
@@ -780,14 +781,14 @@
             justify-content: center;
         }
         .landing-btn.solid {
-            background: linear-gradient(180deg, var(--landing-brand), var(--landing-brand-deep));
+            background: linear-gradient(180deg, #1a74d2, var(--landing-brand-deep));
             color: #ffffff;
-            box-shadow: 0 18px 30px rgba(10,102,194,.18);
+            box-shadow: 0 18px 30px rgba(18,102,196,.22);
         }
         .landing-btn.ghost {
             background: #ffffff;
             color: var(--landing-brand);
-            border-color: rgba(10,102,194,.16);
+            border-color: rgba(18,102,196,.18);
         }
         .landing-footer {
             text-align: center;
